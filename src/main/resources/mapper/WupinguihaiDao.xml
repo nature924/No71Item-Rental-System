@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WupinguihaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WupinguihaiEntity" id="wupinguihaiMap">
+        <result property="wupinbianhao" column="wupinbianhao"/>
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="wupinleibie" column="wupinleibie"/>
+        <result property="wupintupian" column="wupintupian"/>
+        <result property="wupinzhuangtai" column="wupinzhuangtai"/>
+        <result property="wupinshuliang" column="wupinshuliang"/>
+        <result property="zujin" column="zujin"/>
+        <result property="zulinshijian" column="zulinshijian"/>
+        <result property="yajin" column="yajin"/>
+        <result property="zongjiage" column="zongjiage"/>
+        <result property="guihaishijian" column="guihaishijian"/>
+        <result property="wodezhanghao" column="wodezhanghao"/>
+        <result property="wodexingming" column="wodexingming"/>
+        <result property="wodedianhua" column="wodedianhua"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="yonghudianhua" column="yonghudianhua"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WupinguihaiVO" >
+		SELECT * FROM wupinguihai  wupinguihai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WupinguihaiVO" >
+		SELECT  wupinguihai.* FROM wupinguihai  wupinguihai 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WupinguihaiView" >
+
+		SELECT  wupinguihai.* FROM wupinguihai  wupinguihai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WupinguihaiView" >
+		SELECT * FROM wupinguihai  wupinguihai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
